@@ -160,16 +160,7 @@ class Converter
 
         $amphtml = $html5->saveHTML($this->doc);
 
-        $to_replace = [
-            '<!DOCTYPE html>', '<html>', '</html>', '<head>', '</head>', '<body>', '</body>'
-        ];
-
-        $amphtml = str_replace($to_replace, '', $amphtml);
-
-        $amphtml = trim($amphtml, "\n\r\0\x0B");
-        
-
-        return $amphtml;
+        return trim($amphtml, "\n\r\0\x0B");
     }
 
     public function addConverter(TagConverterInterface $converter)
